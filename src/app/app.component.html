@@ -1,2 +1,42 @@
+<div class="container">
+  <div class="row"
+    *ngFor="let person of $any(randomPeople[0] | objectToArray | slice : 0 : 50); let i = index">
+    <div class="col-1">
+      <p>{{ i+1 }}</p>
+    </div>
+    <div class="col-3">
+      <p class="random-person-name">{{ person.name.first }} {{ person.name.last }}</p>
+    </div>
+    <div class="col-2">
+      <p>{{ person.dob.age }}</p>
+    </div>
+    <div class="col-3">
+      <p>{{ person.location.country }}, {{ person.location.postcode }}</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--<div class="container random-people-container"-->
+<!--     *ngFor="let data of randomPeople; let i = index">-->
+<!--    <div class="row"-->
+<!--         *ngFor="let person of $any(data | objectToArray); let j = index">-->
+<!--      <div class="col-1">-->
+<!--        <p>{{ i }}{{ j + 1 }}</p>-->
+<!--      </div>-->
+<!--      <div class="col-3">-->
+<!--        <p class="random-person-name">{{ person.name.first }} {{ person.name.last }}</p>-->
+<!--      </div>-->
+<!--      <div class="col-2">-->
+<!--        <p>{{ person.dob.age }}</p>-->
+<!--      </div>-->
+<!--      <div class="col-3">-->
+<!--        <p>{{ person.location.country }}, {{ person.location.postcode }}</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--</div>-->
+
 <h1>Init title</h1>
 <button class="btn btn-danger">Bootstrap test button</button>
