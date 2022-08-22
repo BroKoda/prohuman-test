@@ -8,7 +8,9 @@ import { RandomPerson } from './model/randomPeople';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit {
+
   title = 'prohuman-test';
   randomPeople: RandomPerson[] = []
   page: any;
@@ -18,6 +20,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.getRandomPeople();
   }
+
 
   private getRandomPeople() {
     // Csak azert van kommentben az URL-es hivas, mert 10-bol 8 alkalommal nem tolt be :)
@@ -36,6 +39,7 @@ export class AppComponent implements OnInit {
         this.randomPeople = randomPeople;
     })
   }
+
 
   checkForPrimeNumbersInPostcode(postcode) {
     let numberString = postcode.toString();
