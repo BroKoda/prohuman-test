@@ -1,18 +1,21 @@
 <div class="container">
   <div class="row"
     *ngFor="let person of $any(randomPeople[0] | objectToArray | slice : 0 : 50); let i = index">
-    <div class="col-1">
-      <p>{{ i+1 }}</p>
-    </div>
-    <div class="col-3">
-      <p class="random-person-name">{{ person.name.first }} {{ person.name.last }}</p>
-    </div>
-    <div class="col-2">
-      <p>{{ person.dob.age }}</p>
-    </div>
-    <div class="col-3">
-      <p>{{ person.location.country }}, {{ person.location.postcode }}</p>
-    </div>
+
+    <ng-template [ngIf]="checkForPrimeNumbersInPostcode(person.location.postcode)">
+      <div class="col-1">
+        <p>{{ i+1 }}</p>
+      </div>
+      <div class="col-3">
+        <p class="random-person-name">{{ person.name.first }} {{ person.name.last }}</p>
+      </div>
+      <div class="col-2">
+        <p>{{ person.dob.age }}</p>
+      </div>
+      <div class="col-3">
+        <p>{{ person.location.country }}, {{ person.location.postcode }}</p>
+      </div>
+    </ng-template>
   </div>
 </div>
 
