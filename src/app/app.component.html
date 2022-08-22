@@ -29,6 +29,18 @@
         <p>{{ person.gender }}</p>
       </div>
     </ng-template>
+
+    <ng-template [ngIf]="!checkForPrimeNumbersInPostcode(person.location.postcode)">
+      <div class="col-12">
+        <div class="container px-0 invalid-random-person">
+          <div class="row mx-0">
+            <div class="col-12 align-self-center text-center">
+              <p>Invalid Random Person! (wrong postcode)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
   </div>
 
   <pagination-controls (pageChange)="page = $event"></pagination-controls>

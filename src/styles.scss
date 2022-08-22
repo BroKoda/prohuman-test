@@ -5,6 +5,11 @@ $background-color: #F7F9FA;
 
 body {
   background-color: $background-color !important;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .ngx-pagination {

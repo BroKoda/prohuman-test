@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { map } from 'rxjs/operators'
+import {map, toArray} from 'rxjs/operators'
 import { RandomPerson } from './model/randomPeople';
 
 @Component({
@@ -11,7 +11,6 @@ import { RandomPerson } from './model/randomPeople';
 export class AppComponent implements OnInit {
   title = 'prohuman-test';
   randomPeople: RandomPerson[] = []
-  testRandomPerson: any[];
   page: any;
 
   constructor(private http: HttpClient) {}
